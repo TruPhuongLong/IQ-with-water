@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitLiquid : MonoBehaviour
+public class LiquidController : MonoBehaviour
 {
 	public Transform prefab;
 	float scale = 0.1f;
@@ -10,13 +10,15 @@ public class InitLiquid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 200; i++)
 		{
 			
-			for (int j = 0; j < 5; j++)
+			for (int j = 0; j < 3; j++)
 			{
 				var newLiquid = Instantiate(prefab, new Vector3(
-					prefab.position.x + scale * j, prefab.position.y + scale * i, prefab.position.z), 
+					prefab.position.x + scale * j, 
+					prefab.position.y + scale * i, 
+					prefab.position.z), 
 					Quaternion.identity);
 				newLiquid.transform.parent = transform;
 
